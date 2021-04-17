@@ -58,6 +58,13 @@ Install docker at https://docs.docker.com/get-docker/
 
 ### Docker pull (recommend)
 
+Run with CPU 
+
+~~~
+docker pull zanehuang/pybullet_spinningup:cpu
+docker run -i -t zanehuang/pybullet_spinningup:cpu -v "$(pwd)"/src:/src /bin/bash
+~~~
+
 
 
 ### Build image from dockerfile
@@ -78,7 +85,7 @@ docker build -t your_name/pybullet_spinningup:cpu .
 
 ~~~
 mkdir src
-
+docker run -i -t your_name/pybullet_spinningup:cpu -v "$(pwd)"/src:/src /bin/bash
 ~~~
 
 4. Pip install spiningup, you can replace your env
