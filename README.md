@@ -3,12 +3,7 @@
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
+    <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#TODO">TODO</a></li>
     <li><a href="#license">License</a></li>
@@ -19,15 +14,16 @@
 
 
 
+
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
 
-Robot learning projects are usually tested in a system with a GUI interface. After the test, we want to deploy the project on a server for large-scale training to improve training efficiency. However, the local training environment may cause hardware compatibility issues during migration and deployment. Docker is. I want to develop a Pybullet robot learning container based on Docker.
+Robot learning projects are usually tested in a system with a GUI interface. After the test, we want to deploy the project on a server for large-scale training to improve training efficiency. However, the local training environment may cause hardware compatibility issues during migration and deployment. I want to develop a Pybullet robot learning container based on Docker.
 
 Here's why:
-* Portability: Docker is an open-source application container engine that allows developers to package their applications and dependencies into a portable image and then publish to any popular Linux or Windows machine.
-* Efficient: Through Docker, you can control the server's CPU or GPU resources and run multiple containers for training simultaneously. And we aggregate the experimental data results of all containers through wandb.
+* Portability: we can package pybullet project and dependencies into a portable image and then publish to any popular Linux or Windows machine.
+* Efficient: Through Docker, you can control the server's CPU or GPU resources and run multiple containers for training simultaneously.
 
 A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
@@ -62,7 +58,7 @@ Run with CPU
 
 ~~~
 docker pull zanehuang/pybullet_spinningup:cpu
-docker run -i -t zanehuang/pybullet_spinningup:cpu -v "$(pwd)"/src:/src /bin/bash
+docker run -i -v "$(pwd)"/src:/src -t zanehuang/pybullet_spinningup:cpu /bin/bash
 ~~~
 
 
